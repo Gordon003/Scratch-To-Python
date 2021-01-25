@@ -1,0 +1,10 @@
+README.md
+setup.py
+scratch_py/__init__.py
+scratch_py/manager.py
+scratch_py/sprite.py
+scratch_to_python.egg-info/PKG-INFO
+scratch_to_python.egg-info/SOURCES.txt
+scratch_to_python.egg-info/dependency_links.txt
+scratch_to_python.egg-info/requires.txt
+scratch_to_python.egg-info/top_level.txt
