@@ -19,10 +19,10 @@ Ensure that images and sounds are put in the right folder. Do not change the fol
 
 **Base Folder**
 * images
-  * speech.png
+  * _speech.png_
 * backgrounds
 * sounds
-* code.py (Can be any name)
+* _code.py_ (Can be any name)
 
 **NOTE**: speech.png are required to allow speech bubble for all sprites, otherwise this library won't work. I am working to put the speech image in the package library instead.
 
