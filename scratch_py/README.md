@@ -34,7 +34,7 @@ Arguments
 image_link : str
   name of new background
   
- game.add_background_image("background1.png")
+game.add_background_image("background1.png")
 ```
 
 - Change background
