@@ -27,14 +27,14 @@ import os
 game = manager.GameManager(800, 600, os.getcwd())
 ```
 
-- Change Game Title
+- Add new background (But doesn't change to it)
 ```python
 Arguments
 ----------
-game_title : str
-  new name of game
+image_link : str
+  name of new background
   
-game.change_title("Game Title")
+ game.add_background_image("background1.png")
 ```
 
 - Change Background
@@ -47,6 +47,36 @@ image_link : str
 game.change_background_image("background1.png")
 ```
 
+- Change Game Title
+```python
+Arguments
+----------
+game_title : str
+  new name of game
+  
+game.change_title("Game Title")
+```
+
+- Change if user has quit or not
+```python
+  
+Returns
+-------
+result    : bool
+  tell user if it has quit or not
+  
+game.check_quit()
+```
+
 - Make new **Game Manager** object
 ```python
+Arguments
+----------
+image_link : str
+  name of new background
+  
+Returns
+-------
+result    : bool
+  tell user if it has quit or not
 ```
