@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 setup(
     name='scratch-to-python',
     packages=find_packages(include=['scratch_py']),
-    version='0.1.0',
+    version='0.1.2',
     description='An easy transition from Scratch to Python',
     author='Gordon Chen',
     license='MIT',

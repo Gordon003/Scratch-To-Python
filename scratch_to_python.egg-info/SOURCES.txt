@@ -1,7 +1,9 @@
 README.md
 setup.py
 scratch_py/__init__.py
+scratch_py/colour.py
 scratch_py/manager.py
+scratch_py/rotation.py
 scratch_py/sprite.py
 scratch_to_python.egg-info/PKG-INFO
 scratch_to_python.egg-info/SOURCES.txt
