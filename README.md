@@ -35,3 +35,6 @@ The online documentation will be added and updated when done so.
 Scratch-To-Python is obviously very dependent on Pygame to display our game application on Python. You can check the pygame library for more information [here](https://github.com/pygame/pygame)
 
 * Pygame 2.0.1
+
+# License
+MIT
