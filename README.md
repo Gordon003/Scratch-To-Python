@@ -14,7 +14,9 @@ Been developing since January 2021.
 pip install scratch-to-python
 ```
 
-# Structure of Folder
+# Base Structure of Folder
+Ensure that images and sounds are put in the right folder. Do not change the folder's name or move it somewhere else.
+
 * images
   * speech.png
 * backgrounds
