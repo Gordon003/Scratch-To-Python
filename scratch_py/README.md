@@ -12,7 +12,7 @@ The Game Manager is basically the CPU of this library. Initially started the Pyg
 '''
 Set up screen size 800 x 600
 
-Attributes
+Arguments
 ----------
 width : int
   width of screen
@@ -21,6 +21,32 @@ height : int
 game_directory: str
   path directory to game folder. os.getcwd() is sufficient.
 '''
+from scratch_py import manager
+import os
 
 game = manager.GameManager(800, 600, os.getcwd())
+```
+
+- Change Game Title
+```python
+Arguments
+----------
+game_title : str
+  new name of game
+  
+game.change_title("Game Title")
+```
+
+- Change Background
+```python
+Arguments
+----------
+image_link : str
+  name of new background
+  
+game.change_background_image("background1.png")
+```
+
+- Make new **Game Manager** object
+```python
 ```
