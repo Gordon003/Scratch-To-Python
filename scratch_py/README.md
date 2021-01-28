@@ -37,7 +37,7 @@ image_link : str
  game.add_background_image("background1.png")
 ```
 
-- Change Background
+- Change background
 ```python
 Arguments
 ----------
@@ -47,7 +47,7 @@ image_link : str
 game.change_background_image("background1.png")
 ```
 
-- Change Game Title
+- Change game title
 ```python
 Arguments
 ----------
@@ -68,7 +68,7 @@ result    : bool
 game.check_quit()
 ```
 
-- Make new **Game Manager** object
+- Description
 ```python
 Arguments
 ----------
