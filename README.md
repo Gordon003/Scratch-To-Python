@@ -17,10 +17,12 @@ pip install scratch-to-python
 # Base Structure of Folder
 Ensure that images and sounds are put in the right folder. Do not change the folder's name or move it somewhere else.
 
+**Base Folder**
 * images
   * speech.png
 * backgrounds
 * sounds
+* code.py (Can be any name)
 
 **NOTE**: speech.png are required to allow speech bubble for all sprites, otherwise this library won't work. I am working to put the speech image in the package library instead.
 
