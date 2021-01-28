@@ -10,7 +10,7 @@ Been developing since January 2021.
 
 ## Requirement
 ```python
-pip install pygame
+pip install scratch-to-python
 ```
 
 ## Help
