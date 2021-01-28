@@ -3,7 +3,9 @@ A library that helps primary/high school students progress from Scratch to Pytho
 
 Perfect for advanced Scratch students who want to make game in actual programming language and learn good syntax and style.
 
-Developed by Gordon since January 2020.
+It will be continuously updated till the MVP of making most Scratch game are met.
+
+Developed since January 2021.
 
 ## Requirement
 - **Pygame Library**
