@@ -20,7 +20,7 @@ pip install scratch-to-python
 * backgrounds
 * sounds
 
-**NOTE**: speech.png are required to allow speech bubble for all sprites, otherwise this library won't work. I am working to put that image in the package library instead.
+**NOTE**: speech.png are required to allow speech bubble for all sprites, otherwise this library won't work. I am working to put the speech image in the package library instead.
 
 # Help
 I am continuing to not only improve on this library but also provide past Scratch projects in Python to give you a better understanding on this library and its usefulness.
@@ -30,4 +30,4 @@ The online documentation will be added and updated when done so.
 # Dependencies
 Scratch-To-Python is obviously very dependent on Pygame to display our game application on Python. You can check the pygame library for more information [here](https://github.com/pygame/pygame)
 
-⋅⋅* Pygame 2.0.1
+* Pygame 2.0.1
