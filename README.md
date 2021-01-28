@@ -1,4 +1,5 @@
-Scratch-To-Python is a free open-source librarylibrary that is designed to help primary/high school students progress from Scratch to Python much more easily while having fun.
+## Introduction to Scratch-To-Python
+Scratch-To-Python is a free open-source library that is designed to help primary/high school students progress from Scratch to Python much more easily while having fun.
 
 Perfect for advanced Scratch students who want to progress to actual programming language while learning good syntax and style in the future.
 
