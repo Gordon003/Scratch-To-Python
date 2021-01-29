@@ -187,11 +187,11 @@ Sprite is basically the same Sprite from Scratch. You can move it, transform it 
 
 | Modules    				| Links          																	|
 | ------------------------- | :-------------------------------------------------------------------------------: |
-| Motion   	| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#game-manager) 	|
-| Looks     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
-| Events     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
-| Control     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
-| Sensing     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
+| Motion   	        | [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#motion) 	|
+| Looks     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#looks) 	|
+| Events     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#events) 	|
+| Control     			| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#control) 	|
+| Sensing     			| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sensing) 	|
 
 - Create new sprite
 ```python
@@ -211,6 +211,94 @@ new_sprite = game.new_sprite("image.png", 30)
 ```
 
 ## Motion
+
+- Move 10 steps
+```python
+sprite.move(10)
+```
+
+- Turn right 15 degrees
+```python
+sprite.turn_right(10)
+```
+
+- Turn left 15 degrees
+```python
+sprite.turn_left(10)
+```
+
+- Go to a specific position
+```python
+sprite.go_to(0,0)
+
+sprite.go_to_random_position()
+```
+
+- Glide to a particular position
+```python
+sprite.glide(100, 100, 1)
+
+sprite.glide_to_mouse_pointer(1)
+
+sprite.glide_to_random_position(1)
+
+sprite.glide_to_sprite(other_Sprite, 1)
+```
+
+- Point in direction
+```python
+sprite.set_direction(100)
+
+sprite.point_toward_mouse()
+
+sprite.point_toward_sprite(other_Sprite)
+```
+
+- Change x by 10
+```python
+sprite.change_x(10)
+```
+
+- Set x to 100
+```python
+sprite.set_x(100)
+```
+
+- Change y by 10
+```python
+sprite.change_y(10)
+```
+
+- Set y to 100
+```python
+sprite.set_y(100)
+```
+
+- If on edge, bounce
+```python
+sprite.bounce_on_edge()
+```
+
+- Set rotation style
+```python
+# All-Around, Left-Right, None
+sprite.set_rotation_style("None")
+```
+
+- Get x position
+```python
+x = sprite.get_x()
+```
+
+- Get y position
+```python
+y = sprite.get_y()
+```
+
+- Get direction
+```python
+dir = sprite.get_direction()
+```
 
 ## Looks
 
