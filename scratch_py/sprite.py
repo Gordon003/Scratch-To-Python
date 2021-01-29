@@ -251,10 +251,7 @@ class Sprite(pygame.sprite.Sprite):
                 self.sound_channel = pygame.mixer.find_channel()
             self.sound_channel.set_volume(self.sound_volume)
             self.sound_channel.play(pygame.mixer.Sound(self.manager.game_directory  + "\\sounds\\" + link), loops = loop_num)
-
-    def point_in_direction(self, degree):
-        self.rotation = degree % 360 + 90
-
+            
     def point_toward_mouse(self):
         mouse_x, mouse_y = pygame.mouse.get_pos()
         rel_x, rel_y = mouse_x - self.x, mouse_y - self.y
