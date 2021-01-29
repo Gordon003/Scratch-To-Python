@@ -1,8 +1,8 @@
 # Module List
 | Modules    				| Links          																	|
 | ------------------------- | :-------------------------------------------------------------------------------: |
-| Game Manager    	| [Link](https://github.com/Gordon003/Scratch-To-Python#game-manager) 	|
-| Sprite     				| [Link](here) 	|
+| Game Manager    	| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#game-manager) 	|
+| Sprite     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
 
 # Game Manager
 The Game Manager is basically the CPU of this library. Initially started the Pygame application, it manages and updates all sprites until the user quit the application.
