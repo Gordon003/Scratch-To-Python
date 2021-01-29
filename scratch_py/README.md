@@ -1,5 +1,5 @@
-# Module List
-| Modules    				| Links          																	|
+# List
+| Classes    				| Links          																	|
 | ------------------------- | :-------------------------------------------------------------------------------: |
 | Game Manager    	| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#game-manager) 	|
 | Sprite     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
@@ -10,8 +10,6 @@ The Game Manager is basically the CPU of this library. Initially started the Pyg
 - Make new **Game Manager** object
 ```python
 '''
-Set up screen size 800 x 600
-
 Arguments
 ----------
 width : int
@@ -24,7 +22,6 @@ game_directory: str
 Returns
 -------
 game    : GameManger
-  Manager that will follow order
 '''
 from scratch_py import manager
 import os
@@ -187,6 +184,14 @@ game.update()
 
 # Sprite
 Sprite is basically the same Sprite from Scratch. You can move it, transform it and many more!
+
+| Modules    				| Links          																	|
+| ------------------------- | :-------------------------------------------------------------------------------: |
+| Motion   	| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#game-manager) 	|
+| Looks     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
+| Events     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
+| Control     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
+| Sensing     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
 
 - Create new sprite
 ```python
