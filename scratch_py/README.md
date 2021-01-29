@@ -20,6 +20,11 @@ height : int
   height of screen
 game_directory: str
   path directory to game folder. os.getcwd() is sufficient.
+  
+Returns
+-------
+game    : GameManger
+  Manager that will follow order
 '''
 from scratch_py import manager
 import os
@@ -58,15 +63,146 @@ game.change_title("Game Title")
 ```
 
 - Change if user has quit or not
-```python
-  
+```python  
 Returns
 -------
 result    : bool
   tell user if it has quit or not
   
-game.check_quit()
+result = game.check_quit()
 ```
+
+- Get current background name
+```python
+Returns
+-------
+name    : str
+  background's name
+  
+name = game.get_background_name()
+```
+
+- Get user event
+```python
+game.get_user_events()
+```
+
+- Get current timer
+```python
+Returns
+-------
+timer    : int
+  current time
+  
+timer = game.get_timer()
+```
+
+- Check if certain key is hold
+```python
+Arguments
+---------
+key: str
+  certain key to hold
+
+Returns
+-------
+result    : bool
+  tell if that key is hold or not
+  
+result = game.key_hold('a')
+```
+
+- Check if certain key is pressed but not hold
+```python
+Arguments
+---------
+key: str
+  certain key to press
+
+Returns
+-------
+result    : bool
+  tell if that key is pressed or not
+  
+result = game.key_pressed('a')
+```
+
+- Check if certain key is released
+```python
+Arguments
+---------
+key: str
+  certain key to release
+
+Returns
+-------
+result    : bool
+  tell if that key is released or not
+  
+result = game.key_released('a')
+```
+
+- Switch to next background image (similar to Scratch backdrop)
+```python
+game.next_background_image()
+```
+
+- Create new sprite
+```python
+Arguments
+---------
+image_link  : bool
+  name of the image for the new sprite
+scale       : float
+  size of image
+  
+Returns
+-------
+new_sprite  : Sprite
+  the new sprite
+  
+new_sprite = game.new_sprite("image.png", 30)
+```
+
+- Play background music
+```python
+Arguments
+---------
+link    : bool
+  link to new background music
+loop_num: int
+  number of loops to play the new background music
+  infinite if loop_num == 0
+  
+game.play_background_music('music.mp3', 0)
+```
+
+- Set background volume
+```python
+Arguments
+---------
+volume  : int
+  new volume
+  
+game.set_background_music_volume(100)
+```
+
+- Stop all game and sprite sounds
+```python
+game.stop_all_sound()
+```
+
+- Stop background music
+```python
+game.stop_background_music()
+```
+
+- Update game per frame (FPS)
+```python
+game.update()
+```
+
+# Sprite
 
 - Description
 ```python
