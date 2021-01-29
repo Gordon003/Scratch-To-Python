@@ -4,7 +4,6 @@ from scratch_py.sprite import *
 
 class GameManager(object):
 
-	# Constructor Function
 	def __init__(self, width, height, game_directory):
 
 		# Pygame core
@@ -86,7 +85,6 @@ class GameManager(object):
 			'right control': pygame.K_RCTRL,
 		}
 
-	# Change background
 	def add_background_image(self, link):
 		try:
 			assert self.background_images_dict[link]
@@ -123,7 +121,6 @@ class GameManager(object):
 		# display rotated image
 		self.screen.blit(rotated_image, origin)
 
-	# Change background
 	def change_background_image(self, link):
 		if link not in self.background_images_lst:
 			img = pygame.image.load(self.game_directory + "\\backgrounds\\" + link).convert()
@@ -131,8 +128,6 @@ class GameManager(object):
 			self.background_images_lst.append(link)
 		self.current_background_image = link
 
-
-	# Change game title
 	def change_title(self, text):
 		pygame.display.set_caption(text)
 
@@ -142,7 +137,6 @@ class GameManager(object):
 			if event.type == pygame.QUIT: return True
 		return False
 
-	# Get background name
 	def get_background_name(self):
 		return self.current_background_image
 
@@ -154,58 +148,50 @@ class GameManager(object):
 	def get_timer(self):
 		return pygame.time.get_ticks() // 1000
 
-	# Check if certain key is hold
 	def key_hold(self, key):
 		if self.key_pressed_list[self.keyboard_dict[key]]: return True
 		return False
 
-	# Check if certain key is pressed but not hold
 	def key_pressed(self, key):
 		for event in self.events_list:
 			if event.type == pygame.KEYDOWN and event.key == self.keyboard_dict[key]: return True
 		return False
 
-	# Check if certain key is released
 	def key_released(self, key):
 		for event in self.events_list:
 			if event.type == pygame.KEYUP and event.key == self.keyboard_dict[key]: return True
 		return False
 
-	# Next background
+	# Switch to next background
 	def next_background_image(self):
 		pos = self.background_images_lst.index(self.current_background_image)
 		pos = (pos + 1) % len(self.background_images_lst)
 		self.current_background_image = self.background_images_lst[pos]
 
-	# New sprite
 	def new_sprite(self, image_link, scale = 1.0):
 		new_sprite = Sprite(self, image_link, scale)
 		self.sprite_objects.append(new_sprite)
 		return new_sprite
 
-	# Play background music
 	def play_background_music(self, link, loop_num = 0):
 		self.background_sound_channel = pygame.mixer.find_channel()
 		self.background_sound_channel.play(pygame.mixer.Sound(self.game_directory  + "\\sounds\\" + link), loops = loop_num)
 
-	# Set volume
 	def set_background_music_volume(self, volume):
 		self.background_sound_channel.set_volume(volume / 100)
 
-	# Stop all sounds
+	# Stop background and sprite sound
 	def stop_all_sound(self):
 		self.stop_background_music()
 		for sprite in self.sprite_objects:
 			if sprite.sound_channel != None:
 				sprite.stop_sound()
 
-	# Stop background music
 	def stop_background_music(self):
 		if self.background_sound_channel != None:
 			self.background_sound_channel.stop()
 		self.background_sound_channel = None
 
-	# Start game engine
 	def update(self):
 
 		# Black background

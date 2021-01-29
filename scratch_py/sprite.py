@@ -9,7 +9,6 @@ from scratch_py.rotation import _convert_pygame_to_scratch_rotation, _convert_sc
 
 class Sprite(pygame.sprite.Sprite):
 
-    # Constructor Function
     def __init__(self, manager, image_link, size = 100):
 
         # Link to game manager
@@ -78,8 +77,7 @@ class Sprite(pygame.sprite.Sprite):
         # Text
         self.text = ""
         self.SpeechBubble = SpeechBubble(self)
-        
-    # Add new image
+
     def add_costume(self, image_link):
         image = pygame.image.load(self.manager.game_directory + "\\images\\" + image_link)
         self.image_dict[image_link] = image
@@ -114,28 +112,23 @@ class Sprite(pygame.sprite.Sprite):
             elif self.rotation  < 90: self.rotation *= -1
             self.y = 0
 
-    # Change size
     def change_size(self, amount):
         self.size += amount
         self.height = (self.size * self.original_height) // 100
         self.width = (self.size * self.original_width) // 100
         self.image = pygame.transform.scale(self.original_image, (self.width, self.height))
 
-    # Change volume
     def change_volume(self, amount):
         self.sound_volume += amount
         if self.sound_channel != None:
             self.sound_channel.set_volume(self.sound_volume)
 
-    # Change X
     def change_x(self, amount):
         self.x_change = amount
 
-    # Change Y
     def change_y(self, amount):
         self.y_change = -1 * amount
 
-    # Clone itself
     def clone(self):
         new = Sprite(self.manager, self.image_name, self.size)
         new.go_to(self.get_x(), self.get_y())
@@ -153,23 +146,18 @@ class Sprite(pygame.sprite.Sprite):
     def get_costume_number(self):
         return list(self.image_dict.keys()).index(self.image_name)
 
-    # Get direction
     def get_direction(self):
         return _convert_pygame_to_scratch_rotation(self.rotation)
 
-    # Get sprite size
     def get_size(self):
         return self.size
 
-    # Get volume
     def get_volume(self):
         return self.sound_volume
 
-    # Get X
     def get_x(self):
         return self.x - self.screen_width // 2 + self.width // 2
 
-	# Get Y
     def get_y(self):
         return self.screen_height // 2 - self.y - self.height // 2
 
@@ -187,39 +175,33 @@ class Sprite(pygame.sprite.Sprite):
         new_y =  self.screen_height // 2 - pos[1]
         self._glide_speed_cal(new_x, new_y, sec)
 
-    # Glide to mouse
     def glide_to_mouse_pointer(self, sec):
         if self.is_gliding: return
         mouse_x, mouse_y = pygame.mouse.get_pos()
         self._glide_speed_cal(mouse_x, mouse_y, sec)
 
-    # Glide to random position
     def glide_to_random_position(self, sec):
         if self.is_gliding: return
         new_x = random.randint(0, self.screen_width)
         new_y =  random.randint(0, self.screen_height)
         self._glide_speed_cal(new_x, new_y, sec)
 
-    # Glide to random position
     def glide_to_sprite(self, sprite, sec):
         if self.is_gliding: return
         self._glide_speed_cal(sprite.x, sprite.y, sec)
 
-    # Go to specific position
     def go_to(self, x, y):
         self.x = self.screen_width // 2 - self.width // 2 + x
         self.y = self.screen_height // 2 - self.height // 2 - y
         self.rect.x = self.x - self.width // 2
         self.rect.y = self.y - self.height // 2
 
-    # Go to random position
     def go_to_random_position(self):
         self.x = random.randint(self.width // 2, self.screen_width - self.width // 2)
         self.y = random.randint(self.height // 2, self.screen_height - self.height // 2)
         self.rect.x = self.x - self.width // 2
         self.rect.y = self.y - self.height // 2
 
-    # Hide sprite
     def hide(self):
         self.is_visible = False
 
@@ -242,12 +224,10 @@ class Sprite(pygame.sprite.Sprite):
             return True
         return False
 
-    # Move sprite
     def move(self, amount):
         self.x_change = amount * math.cos(math.radians(self.rotation))
         self.y_change = -1 * amount * math.sin(math.radians(self.rotation))
 
-    # Get next sprite's image
     def next_costume(self):
         lst = list(self.image_dict.keys())
         pos = lst.index(self.image_name)
@@ -262,7 +242,6 @@ class Sprite(pygame.sprite.Sprite):
         self.width = (self.size * self.original_width) // 100
         self.image = pygame.transform.scale(self.image, (self.width, self.height))
 
-    # Play sound
     def play_sound(self, link, loop_num = 0):
         if self.sound_channel != None and self.sound_channel.get_busy(): return
         else:
@@ -273,72 +252,53 @@ class Sprite(pygame.sprite.Sprite):
             self.sound_channel.set_volume(self.sound_volume)
             self.sound_channel.play(pygame.mixer.Sound(self.manager.game_directory  + "\\sounds\\" + link), loops = loop_num)
 
-    # Point in specific location
     def point_in_direction(self, degree):
         self.rotation = degree % 360 + 90
 
-    # Point toward mouse
     def point_toward_mouse(self):
         mouse_x, mouse_y = pygame.mouse.get_pos()
         rel_x, rel_y = mouse_x - self.x, mouse_y - self.y
         self.rotation = (180 / math.pi) * -math.atan2(rel_y, rel_x)
 
-    # Point toward another sprite
     def point_toward_sprite(self, otherSprite):
         diff_x = otherSprite.x - self.x + otherSprite.width // 4
         diff_y = self.y - otherSprite.y + otherSprite.height // 4
         self.rotation = math.degrees(math.atan2(diff_y,diff_x))
 
-    # Say
     def say(self, text, sec = 0):
         self.text = text
         if sec == 0: self.is_say_infinite = True
         else: self.say_cooldown = pygame.time.get_ticks() + sec * 1000
 
-    # Set costume after saying something
     def set_costume_after_say(self, image_link):
         self.costume_after_say = image_link
 
-    # Set direction
     def set_direction(self, angle):
         self.rotation = _convert_scratch_to_pygame_rotation(angle)
 
-    # Set rotation
     def set_rotation_style(self, rotation_style):
         self.rotation_style = rotation_style
 
-    # Set size
     def set_size(self, size):
         self.size = size
         self.height = (self.size * self.original_height) // 100
         self.width = (self.size * self.original_width) // 100
         self.image = pygame.transform.scale(self.original_image, (self.width, self.height))
 
-    # Set size
-    def set_size(self, size):
-        self.size = size
-        self.height = size * self.original_height // 100
-        self.width = size * self.original_width // 100
-
-    # Set volume
     def set_volume(self, vol):
         if self.sound_channel != None:
             self.sound_channel.set_volume(vol)
         self.sound_volume = vol
 
-    # Set X position
     def set_x(self, amount):
         self.x = self.screen_width // 2 - self.width // 2 + amount
 
-	# Set Y position
     def set_y(self, amount):
         self.y = self.screen_height // 2 - self.height // 2 - amount
 
-    # Stop sound
     def stop_sound(self):
         self.sound_channel.stop()
 
-    # Show sprite
     def show(self):
         self.is_visible = True
 
@@ -346,7 +306,6 @@ class Sprite(pygame.sprite.Sprite):
     def show_box(self):
         self.box_visible = True
 
-    # Switch sprite image
     def switch_costume(self, image_link):
         self.image = self.image_dict[image_link]
         self.original_image = self.image
@@ -368,15 +327,11 @@ class Sprite(pygame.sprite.Sprite):
             return True
         return False
 
-    # Turn Left
     def turn_left(self, angle):
-        if not self.is_waiting:
-            self.rotation += angle
+        if not self.is_waiting: self.rotation += angle
 
-    # Turn Right
     def turn_right(self, angle):
-        if not self.is_waiting:
-            self.rotation -= angle
+        if not self.is_waiting: self.rotation -= angle
 
     # Update position every frame
     def update_position(self):
@@ -411,7 +366,6 @@ class Sprite(pygame.sprite.Sprite):
 
         self.SpeechBubble.update_movement()
 
-    # Wait
     def wait(self, sec):
         self.is_waiting = True
         self.cooldown = pygame.time.get_ticks() + (sec * 1000)
@@ -419,7 +373,6 @@ class Sprite(pygame.sprite.Sprite):
 # SPEECH BUBBLE
 class SpeechBubble(pygame.sprite.Sprite):
 
-    # Constructor function
     def __init__(self, parentSprite):
         self.parentSprite = parentSprite
         self.image = pygame.image.load(self.parentSprite.manager.game_directory + "\\images\\speech.png")
@@ -428,13 +381,11 @@ class SpeechBubble(pygame.sprite.Sprite):
         self.width = 150
         self.height = 150
 
-    # Render text
     def render_text(self):
         self.textFont = self.font.render(self.parentSprite.text, True, BLACK, WHITE)
         self.textRect = self.textFont.get_rect() 
         self.textRect.center = (self.x + 80, self.y + 65)
 
-    # Update movement
     def update_movement(self):
         self.x = self.parentSprite.x + self.parentSprite.width
         self.y = self.parentSprite.y - self.height
