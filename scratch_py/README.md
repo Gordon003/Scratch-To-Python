@@ -307,6 +307,8 @@ dir = sprite.get_direction()
 sprite.say("Hello")
 
 sprite.say("Hello", 2)
+
+sprite.set_costume_after_say("image2.png")
 ```
 
 - think "Hello"
@@ -378,14 +380,25 @@ sprite.set_volume(100)
 ```python
 sprite.wait(1)
 ```
+- Clone
+```python
+new_clone = sprite.clone()
+```
 
 ## Sensing
 
-- Touch
+- Check if sprite touch something
 ```python
 result = sprite.touch(other_sprite)
 
 result = sprite.touch_edge()
+```
+
+- Check if mouse clicked on sprite
+```python
+result = sprite.mouse_clicked()
+
+result = sprite.mouse_hovered()
 ```
 
 - Check Key 'Space' pressed
@@ -395,4 +408,13 @@ result = game.key_hold('space')
 result = game.key_pressed('space')
 
 result - game.key_released('space')
+```
+
+## Sensing
+
+- Show collision box
+```python
+sprite.show_box()
+
+sprite.hide_box()
 ```
