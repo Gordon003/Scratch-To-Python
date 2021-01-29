@@ -189,7 +189,7 @@ Sprite is basically the same Sprite from Scratch. You can move it, transform it 
 | ------------------------- | :-------------------------------------------------------------------------------: |
 | Motion   	        | [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#motion) 	|
 | Looks     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#looks) 	|
-| Events     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#events) 	|
+| Sound     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sound) 	|
 | Control     			| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#control) 	|
 | Sensing     			| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sensing) 	|
 
@@ -302,30 +302,97 @@ dir = sprite.get_direction()
 
 ## Looks
 
-## Events
+- say "Hello"
+```python
+sprite.say("Hello")
+
+sprite.say("Hello", 2)
+```
+
+- think "Hello"
+```python
+#TODO
+```
+
+- Switch costume
+```python
+sprite.add_costume("image2.png")
+
+sprite.next_costume()
+
+sprite.switch_costume("image2.png")
+```
+
+- Change size
+```python
+sprite.change_size(10)
+```
+
+- Show
+```python
+sprite.show()
+```
+
+- Hide
+```python
+sprite.hide()
+```
+
+- Get costume number
+```python
+name = sprite.get_costume_name()
+
+num = sprite.get_costume_number()
+```
+
+- Get size
+```python
+size = sprite.get_size()
+```
+
+## Sound
+
+- Play sound
+```python
+sprite.play_sound("music.wav")
+```
+
+- Stop sound
+```python
+sprite.stop_sound()
+```
+
+- Change volume by 10
+```python
+sprite.change_volume(10)
+```
+
+- Set volume to 100
+```python
+sprite.set_volume(100)
+```
 
 ## Control
 
-## Sensing
-
-- Add new costume to sprite
+- Wait 1 second
 ```python
-Arguments
----------
-image_link  : str
-  link to new image
-
-- Description
-```python
-Arguments
-----------
-image_link : str
-  name of new background
-  
-Returns
--------
-result    : bool
-  tell user if it has quit or not
+sprite.wait(1)
 ```
 
-- Bounce on edge (similar to Scratch function)
+## Sensing
+
+- Touch
+```python
+result = sprite.touch(other_sprite)
+
+result = sprite.touch_edge()
+```
+
+- Check Key 'Space' pressed
+```python
+result = game.key_hold('space')
+
+result = game.key_pressed('space')
+
+result - game.key_released('space')
+```
