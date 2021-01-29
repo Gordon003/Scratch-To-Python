@@ -147,23 +147,6 @@ result = game.key_released('a')
 game.next_background_image()
 ```
 
-- Create new sprite
-```python
-Arguments
----------
-image_link  : bool
-  name of the image for the new sprite
-scale       : float
-  size of image
-  
-Returns
--------
-new_sprite  : Sprite
-  the new sprite
-  
-new_sprite = game.new_sprite("image.png", 30)
-```
-
 - Play background music
 ```python
 Arguments
@@ -203,6 +186,31 @@ game.update()
 ```
 
 # Sprite
+Sprite is basically the same Sprite from Scratch. You can move it, transform it and many more!
+
+- Create new sprite
+```python
+Arguments
+---------
+image_link  : bool
+  name of the image for the new sprite
+scale       : float
+  size of image
+  
+Returns
+-------
+new_sprite  : Sprite
+  the new sprite
+  
+new_sprite = game.new_sprite("image.png", 30)
+```
+
+- Add new costume to sprite
+```python
+Arguments
+---------
+image_link  : str
+  link to new image
 
 - Description
 ```python
