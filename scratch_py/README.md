@@ -1,5 +1,5 @@
-# Module List
-| Modules    				| Links          																	|
+# List
+| Classes    				| Links          																	|
 | ------------------------- | :-------------------------------------------------------------------------------: |
 | Game Manager    	| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#game-manager) 	|
 | Sprite     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sprite) 	|
@@ -10,8 +10,6 @@ The Game Manager is basically the CPU of this library. Initially started the Pyg
 - Make new **Game Manager** object
 ```python
 '''
-Set up screen size 800 x 600
-
 Arguments
 ----------
 width : int
@@ -24,7 +22,6 @@ game_directory: str
 Returns
 -------
 game    : GameManger
-  Manager that will follow order
 '''
 from scratch_py import manager
 import os
@@ -188,6 +185,14 @@ game.update()
 # Sprite
 Sprite is basically the same Sprite from Scratch. You can move it, transform it and many more!
 
+| Modules    				| Links          																	|
+| ------------------------- | :-------------------------------------------------------------------------------: |
+| Motion   	        | [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#motion) 	|
+| Looks     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#looks) 	|
+| Sound     				| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sound) 	|
+| Control     			| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#control) 	|
+| Sensing     			| [Link](https://github.com/Gordon003/Scratch-To-Python/blob/main/scratch_py/README.md#sensing) 	|
+
 - Create new sprite
 ```python
 Arguments
@@ -207,32 +212,209 @@ new_sprite = game.new_sprite("image.png", 30)
 
 ## Motion
 
+- Move 10 steps
+```python
+sprite.move(10)
+```
+
+- Turn right 15 degrees
+```python
+sprite.turn_right(10)
+```
+
+- Turn left 15 degrees
+```python
+sprite.turn_left(10)
+```
+
+- Go to a specific position
+```python
+sprite.go_to(0,0)
+
+sprite.go_to_random_position()
+```
+
+- Glide to a particular position
+```python
+sprite.glide(100, 100, 1)
+
+sprite.glide_to_mouse_pointer(1)
+
+sprite.glide_to_random_position(1)
+
+sprite.glide_to_sprite(other_Sprite, 1)
+```
+
+- Point in direction
+```python
+sprite.set_direction(100)
+
+sprite.point_toward_mouse()
+
+sprite.point_toward_sprite(other_Sprite)
+```
+
+- Change x by 10
+```python
+sprite.change_x(10)
+```
+
+- Set x to 100
+```python
+sprite.set_x(100)
+```
+
+- Change y by 10
+```python
+sprite.change_y(10)
+```
+
+- Set y to 100
+```python
+sprite.set_y(100)
+```
+
+- If on edge, bounce
+```python
+sprite.bounce_on_edge()
+```
+
+- Set rotation style
+```python
+# All-Around, Left-Right, None
+sprite.set_rotation_style("None")
+```
+
+- Get x position
+```python
+x = sprite.get_x()
+```
+
+- Get y position
+```python
+y = sprite.get_y()
+```
+
+- Get direction
+```python
+dir = sprite.get_direction()
+```
+
 ## Looks
 
-## Events
+- say "Hello"
+```python
+sprite.say("Hello")
+
+sprite.say("Hello", 2)
+
+sprite.set_costume_after_say("image2.png")
+```
+
+- think "Hello"
+```python
+#TODO
+```
+
+- Switch costume
+```python
+sprite.add_costume("image2.png")
+
+sprite.next_costume()
+
+sprite.switch_costume("image2.png")
+```
+
+- Change size
+```python
+sprite.change_size(10)
+```
+
+- Show
+```python
+sprite.show()
+```
+
+- Hide
+```python
+sprite.hide()
+```
+
+- Get costume number
+```python
+name = sprite.get_costume_name()
+
+num = sprite.get_costume_number()
+```
+
+- Get size
+```python
+size = sprite.get_size()
+```
+
+## Sound
+
+- Play sound
+```python
+sprite.play_sound("music.wav")
+```
+
+- Stop sound
+```python
+sprite.stop_sound()
+```
+
+- Change volume by 10
+```python
+sprite.change_volume(10)
+```
+
+- Set volume to 100
+```python
+sprite.set_volume(100)
+```
 
 ## Control
 
-## Sensing
-
-- Add new costume to sprite
+- Wait 1 second
 ```python
-Arguments
----------
-image_link  : str
-  link to new image
-
-- Description
+sprite.wait(1)
+```
+- Clone
 ```python
-Arguments
-----------
-image_link : str
-  name of new background
-  
-Returns
--------
-result    : bool
-  tell user if it has quit or not
+new_clone = sprite.clone()
 ```
 
-- Bounce on edge (similar to Scratch function)
+## Sensing
+
+- Check if sprite touch something
+```python
+result = sprite.touch(other_sprite)
+
+result = sprite.touch_edge()
+```
+
+- Check if mouse clicked on sprite
+```python
+result = sprite.mouse_clicked()
+
+result = sprite.mouse_hovered()
+```
+
+- Check Key 'Space' pressed
+```python
+result = game.key_hold('space')
+
+result = game.key_pressed('space')
+
+result - game.key_released('space')
+```
+
+## Sensing
+
+- Show collision box
+```python
+sprite.show_box()
+
+sprite.hide_box()
+```
