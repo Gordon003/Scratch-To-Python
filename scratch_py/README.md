@@ -205,6 +205,16 @@ new_sprite  : Sprite
 new_sprite = game.new_sprite("image.png", 30)
 ```
 
+## Motion
+
+## Looks
+
+## Events
+
+## Control
+
+## Sensing
+
 - Add new costume to sprite
 ```python
 Arguments
@@ -224,3 +234,5 @@ Returns
 result    : bool
   tell user if it has quit or not
 ```
+
+- Bounce on edge (similar to Scratch function)
